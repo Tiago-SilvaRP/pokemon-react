@@ -7,7 +7,7 @@ export async function dataPokemons(amount= 10) {
         const response = await axios.get(`${baseUrl}/?limit=${amount=10}`)
         
         if (!response.data || !response.data.results) {
-            throw new Error("Erro inesperado ao buscar pokemons")
+            throw new Error("Erro inesperado ao buscar  API pokemons")
         };
         return response.data.results
 
