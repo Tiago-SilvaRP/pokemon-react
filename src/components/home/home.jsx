@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { dataPokemons } from "../services/api-Pokemon";
+import { dataPokemons } from "../../services/api-Pokemon";
+import { Button } from "../button/button";
 
 export const Home = () => {
     const [pokemons, setPokemons] = useState([]);
@@ -43,10 +44,10 @@ export const Home = () => {
                 }
             </ul>
 
-            <button onClick={handleLoadPokemons}
+            <Button onClick={handleLoadPokemons} 
                 disabled={loading || pokemons.length === 0}>
                 {loading ? "Carregando..." : "Carregar mais Pokemons"}
-            </button>
+            </Button>
         </main>
     )
 }
