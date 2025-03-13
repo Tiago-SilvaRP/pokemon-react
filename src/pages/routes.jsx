@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { Home } from "../components/home/home"
 import { Header } from "../components/header/header"
-
+import { Pokemon } from "./pokemon"
+import { Home } from "./home"
 
 export const AppRoutes = () => {
     return (
@@ -9,7 +9,7 @@ export const AppRoutes = () => {
             <Header />
         <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route exact path="/home/:id" element={<Home />} />
+            <Route exact path="/pokemon/:id" element={<Pokemon />}/>
         </Routes>
         </BrowserRouter>
     )

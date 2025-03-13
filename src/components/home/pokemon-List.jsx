@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
 import { dataPokemons } from "../../services/api-Pokemon";
 import { Button } from "../button/button";
+import { Link } from "react-router-dom";
 
-export const Home = () => {
+export const ListPokemons = () => {
     const [pokemons, setPokemons] = useState([]);
     const [offset, setOffset] = useState(0)
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        const fetchHome = async () => {
+        const fetchListPokemons = async () => {
             const pokemons = await dataPokemons()
             setPokemons(pokemons)
         }
-        fetchHome()
+        fetchListPokemons()
     }, [])
 
     const handleLoadPokemons = async () => {
@@ -34,17 +35,19 @@ export const Home = () => {
             <ul>
                 {pokemons.length > 0 ? (pokemons.map((pokemon) => (
                     <li key={pokemon.id} className="cards">
-                        <h3>{pokemon.name}</h3>
-                        <img src={
-                            pokemon.sprites?.other["official-artwork"]?.front_default ??
-                            pokemon.sprites?.other["official-artwork"]?.front_shiny
-                        } alt={pokemon.name} />
+                        <Link to={`/pokemon/${pokemon.id}`}>
+                            <h3>{pokemon.name}</h3>
+                            <img src={
+                                pokemon.sprites?.other["official-artwork"]?.front_default ??
+                                pokemon.sprites?.other["official-artwork"]?.front_shiny
+                            } alt={pokemon.name} />
+                        </Link>
                     </li>))
                 ) : (<p>Carregando pokemons...</p>)
                 }
             </ul>
 
-            <Button onClick={handleLoadPokemons} 
+            <Button onClick={handleLoadPokemons}
                 disabled={loading || pokemons.length === 0}>
                 {loading ? "Carregando..." : "Carregar mais Pokemons"}
             </Button>

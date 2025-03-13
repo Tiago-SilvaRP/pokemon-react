@@ -23,3 +23,16 @@ export async function dataPokemons(offset=0, amount= 10) {
         console.error('erro ao buscar lista de pokemons', error.message)
     }
 }
+
+export async function dataPokemonId(id) {
+    try {
+        const response = await axios.get(`${baseUrl}/${id}`)
+        if (!response.data) {
+            throw new Error("Erro inesperado ao buscar  API pokemons")
+        };
+        return response.data;
+
+    } catch (error) {
+        console.error('erro ao buscar lista de pokemons', error.message)
+    }
+}
