@@ -31,7 +31,7 @@ export const PokemonDetails = () => {
                     pokemon.sprites?.other["official-artwork"]?.front_shiny
                 } alt={pokemon.name} />
                 <div className="description">
-                    <h3><strong>Abilities:</strong></h3>
+                    <h3><strong>Habilidades:</strong></h3>
                     <ul>
                         {pokemon.abilities?.map((abilities, index) => (
                             <li key={index}>
