@@ -49,17 +49,19 @@ export const PokemonDetails = () => {
         <main>
             <div className="card">
                 <h3>{pokemon.name}</h3>
-                <ul>
-                    {pokemon.types && pokemon.types.length > 0 ?
-                        pokemon.types?.map((t) => (
-                            <li key={t.type.name}>
-                                <strong>Tipo: </strong>
-                                {t.type.name}
-                            </li>
-                        )) : (
-                            <p>Tipo não encontrado</p>
-                        )}
-                </ul>
+                <div className="types">
+                    <h3>Tipos</h3>
+                    <ul>
+                        {pokemon.types && pokemon.types.length > 0 ?
+                            pokemon.types?.map((t) => (
+                                <li key={t.type.name}>
+                                    {t.type.name}
+                                </li>
+                            )) : (
+                                <p>Tipo não encontrado</p>
+                            )}
+                    </ul>
+                </div>
 
                 <img src={
                     pokemon.sprites?.other["official-artwork"]?.front_default ??
