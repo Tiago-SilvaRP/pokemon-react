@@ -9,18 +9,26 @@ export const Header = () => {
             <Link to='/'>
                 <Img src={pokebaal} alt="PokeBaal" />
             </Link>
-            <Img src={logoPokemon} alt="Logo Pokemon" />
+            <Logo src={logoPokemon} alt="Logo Pokemon" />
+            {/* <i class="fas fa-moon"></i> */}
+            <i className="fas fa-moon" style={{ color: "#FFD43B", fontSize: "24px" }}></i>
         </HeaderContainer>
     )
 }
 
 const HeaderContainer = styled.header`
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    align-items: center;
     height: 70px;
-    width: 100%
+    width: 100%;
+    background-color: hsl(210, 2.80%, 57.60%);
 `
 
 const Img = styled.img`
-    height: 100%
+    height: 50px;
+`
+
+const Logo = styled.img`
+    height: 150px;
 `

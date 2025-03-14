@@ -4,7 +4,7 @@ import { Button } from "../button/button";
 import { Link } from "react-router-dom";
 
 export const ListPokemons = () => {
-    const [pokemons, setPokemons] = useState([]);
+    const [pokemons, setPokemons] = useState({});
     const [offset, setOffset] = useState(0)
     const [loading, setLoading] = useState(false);
 
@@ -12,6 +12,7 @@ export const ListPokemons = () => {
         const fetchListPokemons = async () => {
             const pokemons = await dataPokemons()
             setPokemons(pokemons)
+            
         }
         fetchListPokemons()
     }, [])
