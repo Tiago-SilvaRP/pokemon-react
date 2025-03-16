@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import pokebaal from '../../images/pokebola.png'
 import logoPokemon from '../../images/logoPokemon.png'
 import styled from "styled-components"
+import { ThemeTooglerButton } from "../theme-toogler-button/themeTooglerButton"
 
 export const Header = () => {
     return (
@@ -10,8 +11,7 @@ export const Header = () => {
                 <Img src={pokebaal} alt="PokeBaal" />
             </Link>
             <Logo src={logoPokemon} alt="Logo Pokemon" />
-            {/* <i class="fas fa-moon"></i> */}
-            <i className="fas fa-moon" style={{ color: "#FFD43B", fontSize: "24px" }}></i>
+            <ThemeTooglerButton />
         </HeaderContainer>
     )
 }
@@ -22,11 +22,14 @@ const HeaderContainer = styled.header`
     align-items: center;
     height: 70px;
     width: 100%;
-    background-color: hsl(210, 2.80%, 57.60%);
 `
 
 const Img = styled.img`
     height: 50px;
+    
+    &:hover{
+        scale: 1.1;
+    }
 `
 
 const Logo = styled.img`

@@ -13,6 +13,7 @@ export const PokemonDetails = () => {
         const fetchPokemonDetails = async () => {
             const pokemon = await dataPokemonId(id)
             setPokemon(pokemon)
+            
             fetchAbilitiesDescripion(pokemon.abilities)
         }
         fetchPokemonDetails()

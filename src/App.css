@@ -7,6 +7,11 @@
   align-items: center;
   margin: 50px;
 }
+
+body{
+  background: linear-gradient(to bottom, #6A0DAD, #000000);
+  color: #fff;
+}
 h1{
   display: flex;
   justify-content: center;
