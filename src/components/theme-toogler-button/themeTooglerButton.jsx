@@ -8,7 +8,6 @@ import { styled } from "styled-components";
 export const ThemeTooglerButton = () => {
 
     const { theme, setTheme } = useContext(ThemeContext)
-    console.log(theme);
     
     return (
         <div>
@@ -28,9 +27,10 @@ const StyledButon = styled(Button)`
     height: 50px;
     border: transparent;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
 
     &:hover{
-    scale: 1.1
+    scale: 1.1;
     }
 `
 const Img = styled.img`

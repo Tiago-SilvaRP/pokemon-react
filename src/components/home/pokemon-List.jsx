@@ -1,18 +1,21 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { dataPokemons } from "../../services/api-Pokemon";
 import { Button } from "../button/button";
 import { Link } from "react-router-dom";
+import { Main } from "./style-Pokemon-List";
+import { ThemeContext } from "../../contexts/themeContext";
 
 export const ListPokemons = () => {
     const [pokemons, setPokemons] = useState({});
     const [offset, setOffset] = useState(0)
     const [loading, setLoading] = useState(false);
+    const { theme } = useContext(ThemeContext)
 
     useEffect(() => {
         const fetchListPokemons = async () => {
             const pokemons = await dataPokemons()
             setPokemons(pokemons)
-            
+
         }
         fetchListPokemons()
     }, [])
@@ -31,14 +34,16 @@ export const ListPokemons = () => {
     }
 
     return (
-        <main>
+        <Main style={{color: theme.color}}>
             <h1>Clique em um pokemon para ver mais detalhes sobre ele!</h1>
-            <ul>
+            <ul className="cards">
                 {pokemons.length > 0 ? (pokemons.map((pokemon) => (
-                    <li key={pokemon.id} className="cards">
-                        <Link to={`/pokemon/${pokemon.id}`}>
+                    <li key={pokemon.id} className="card"
+                    style={{background: theme.background}}>
+                        <Link style={{color: theme.color}} 
+                        to={`/pokemon/${pokemon.id}`}>
                             <h3>{pokemon.name}</h3>
-                            <img src={
+                            <img className="imagens-lista" src={
                                 pokemon.sprites?.other["official-artwork"]?.front_default ??
                                 pokemon.sprites?.other["official-artwork"]?.front_shiny
                             } alt={pokemon.name} />
@@ -49,9 +54,11 @@ export const ListPokemons = () => {
             </ul>
 
             <Button onClick={handleLoadPokemons}
-                disabled={loading || pokemons.length === 0}>
+                disabled={loading || pokemons.length === 0}
+                style={{color: theme.color, background: theme.background}}
+                className='btn'>
                 {loading ? "Carregando..." : "Carregar mais Pokemons"}
             </Button>
-        </main>
+        </Main>
     )
 }

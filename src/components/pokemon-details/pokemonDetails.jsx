@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { dataPokemonId } from "../../services/api-Pokemon";
 import { useParams } from "react-router-dom";
-// import styled from "styled-components";
+import { ThemeContext } from "../../contexts/themeContext";
+
 
 export const PokemonDetails = () => {
+    const { theme } = useContext(ThemeContext)
     const [pokemon, setPokemon] = useState({});
     const [abilitiesDescription, setAbilitiesDescription] = useState({})
     const { id } = useParams()
@@ -47,7 +49,7 @@ export const PokemonDetails = () => {
     }
 
     return (
-        <main>
+        <main style={{color: theme.color}}>
             <div className="card">
                 <h3>{pokemon.name}</h3>
                 <div className="types">
@@ -92,3 +94,4 @@ export const PokemonDetails = () => {
         </main>
     )
 }
+
