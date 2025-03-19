@@ -1,4 +1,3 @@
-import './App.css'
 import { ThemeProvider } from './contexts/themeContext'
 import { AppRoutes } from './pages/routes'
 
