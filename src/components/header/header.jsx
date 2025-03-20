@@ -7,14 +7,14 @@ import { useContext } from "react"
 import { ThemeContext } from "../../contexts/themeContext"
 
 export const Header = () => {
-    const { theme } = useContext(ThemeContext);
+    useContext(ThemeContext);
 
     return (
         <HeaderContainer>
             <Link to='/'>
                 <PokeHome >
-                <Img src={pokebaal} alt="PokeBaal" />
-                <HomeText style={{color: theme.color}}>Home</HomeText>
+                    <Img src={pokebaal} alt="PokeBaal" />
+                    <HomeText>Home</HomeText>
                 </PokeHome>
             </Link>
             <Logo src={logoPokemon} alt="Logo Pokemon" />
@@ -29,6 +29,7 @@ const HeaderContainer = styled.header`
     align-items: center;
     height: 70px;
     width: 100%;
+    margin-top: 30px;
 
     @media(max-width: 560px) {
         flex-direction: column;
@@ -48,13 +49,14 @@ const PokeHome = styled.div`
 
 const HomeText = styled.h3`
     margin-left: 10px;
+    color: ${(children) => children.theme.color};
 `
 
 const Img = styled.img`
     height: 50px;
     
     &:hover{
-        scale: 1.1;
+        trasnform: scale: (1.1);
     }
 `
 

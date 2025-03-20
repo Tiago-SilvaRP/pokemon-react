@@ -18,18 +18,15 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background: ${(props) => props.theme?.background};
-        color: ${(props) => props.theme?.color}
-        transition: color 0.8s ease-in-out;
+        background: ${(children) => children.theme.background};
         min-height: 100vh;
-        margin-top: 30px
-    }
+    } 
 
-    li{
+    li {
         list-style-type: none;
     }
 
-    a{
+    a {
         text-decoration: none;
     }
 `

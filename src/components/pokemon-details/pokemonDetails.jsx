@@ -54,7 +54,7 @@ export const PokemonDetails = () => {
                 <TitleCard>{pokemon.name}</TitleCard>
                 <Type>
                     <h3>Tipo</h3>
-                    <ul >
+                    <ul>
                         {pokemon.types && pokemon.types.length > 0 ?
                             pokemon.types?.map((t) => (
                                 <Li key={t.type.name}>
@@ -99,6 +99,10 @@ export const PokemonDetails = () => {
     )
 }
 
+const backgroundTitle = `
+    background: rgba(255, 145, 77, 0.2);
+`
+
 const Main = styled.main`
     display: flex;
     margin-top: 30px;
@@ -108,7 +112,6 @@ const Main = styled.main`
     width: 400px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 
-    // RESPONSIVIDADE
     @media (max-width: 500px) {
         width: 90%;
         img {
@@ -126,10 +129,6 @@ const Card = styled.div`
     width: 100%;
 `
 
-const backgroundTitle = `
-    background: rgba(255, 145, 77, 0.2);
-`
-
 const TitleCard = styled.h3`
     margin-bottom: 10px;
     width:100%;
@@ -139,6 +138,7 @@ const TitleCard = styled.h3`
     font-weight: bold;
     ${backgroundTitle};
 `
+
 const Type = styled.div`
     display: flex;
     justify-content: space-between;
@@ -153,6 +153,7 @@ const Type = styled.div`
         gap: 10px;
     }
 `
+
 const Li = styled.li`
     padding: 5px 10px;
     background: #ff914d;
@@ -164,8 +165,9 @@ const Img = styled.img`
     height: 250px;
     margin: 15px;
     border-radius: 10px;
-    background:rgb(247, 247, 233);
+    background:#f7f7e9;
 `
+
 const Description = styled.div`
     display: flex;
     flex-direction: column;
@@ -180,6 +182,7 @@ const Description = styled.div`
         margin-bottom: 5px;
     }
 `
+
 const Abilitie = Description;
 
 const Moves = styled(Description)`
