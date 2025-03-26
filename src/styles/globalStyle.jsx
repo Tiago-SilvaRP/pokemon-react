@@ -20,7 +20,8 @@ export const GlobalStyle = createGlobalStyle`
     body {
         background: ${(children) => children.theme.background};
         min-height: 100vh;
-    } 
+        padding-bottom: 20px;
+    }
 
     li {
         list-style-type: none;

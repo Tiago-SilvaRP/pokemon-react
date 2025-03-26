@@ -31,11 +31,10 @@ export const PokemonDetails = () => {
                     const response = await fetch(a.ability.url)
                     const data = await response.json()
 
-                    //usei o find porque precisava que me retornasse apenas um elemento que satisfaz minha condição
                     const descriptionEntry = data.flavor_text_entries.find(
                         (entry) => entry.language.name === "en"
                     );
-                    //utilizei um objeto DINAMICO, onde ele retorna o nome da habilidade e o texto dela, ou seja ele vai trazer o nome da habilidade e o texto dela dinamicamente, trazendo um objeto e nao um array evitando codigos desnecessarios e menos codigos
+
                     description[a.ability.name] = descriptionEntry
                         ? descriptionEntry.flavor_text
                         : "Descrição não encontrada."
@@ -86,7 +85,7 @@ export const PokemonDetails = () => {
                         </UlAbilitieMoves>
                     </Abilitie>
                     <Moves>
-                        <h3>Moves</h3>
+                        <h3>Movimentos</h3>
                         <UlAbilitieMoves>
                             {pokemon.moves?.slice(0, amountMoves).map((moves) => (
                                 <Li key={moves.move.name}>{moves.move.name}</Li>

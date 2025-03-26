@@ -9,7 +9,6 @@ export const ListPokemons = () => {
     const [pokemons, setPokemons] = useState([]);
     const [offset, setOffset] = useState(0)
     const [loading, setLoading] = useState(false);
-
     useContext(ThemeContext)
 
     useEffect(() => {
@@ -22,15 +21,15 @@ export const ListPokemons = () => {
     }, [])
 
     const handleLoadPokemons = async () => {
-        if (loading) return; // vai ve se ta carregando, e evita do usuario fica clicando varias vezes
+        if (loading) return; 
 
-        setLoading(true) // coloca antes pra botao fica desativado
+        setLoading(true) 
         const newOffset = offset + 10
         setOffset(newOffset)
 
         const pokemons = await dataPokemons(newOffset)
         setPokemons(newPokemons => [...newPokemons, ...pokemons])
-        //se inverter ...newPokemons com ...pokemons quando for atualizado  o state os novos pokemons ficaram antes doa antigos
+
         setLoading(false)
     }
 
@@ -61,26 +60,11 @@ export const ListPokemons = () => {
         </Main>
     )
 }
+
 const boxShadow = `
     box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
         rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 `
-
-const SelectContainer = styled.div`
-    display: flex;
-    align-items: center;
-`;
-
-const Select = styled.select`
-    height: 60px;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    background: ${(children) => children.theme.background};
-    color: ${(children) => children.theme.color};
-    ${boxShadow};
-`;
-
 
 const Main = styled.main`
     display: flex;

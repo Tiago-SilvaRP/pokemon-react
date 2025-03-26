@@ -3,7 +3,6 @@ const baseUrl = "https://pokeapi.co/api/v2/pokemon"
 
 export async function dataPokemons(offset=0, amount= 10) {
     try {
-        // const randomOffset = Math.floor(Math.random() * 30)//api contem 1301 pokemons
         const response = await axios.get(`${baseUrl}?offset=${offset}&limit=${amount}`)
         
         if (!response.data || !response.data.results) {
