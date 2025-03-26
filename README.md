@@ -68,7 +68,7 @@
 
 # Gif funcionamento do Projeto
 
-[<img src="./src/images/gif.gif" alt="gif funcionamento do projeto">]
+[<img src="./src/images/gif.gif" alt="Gif funcionamento do projeto">]
 
 # Autor 
 
@@ -76,4 +76,4 @@
 
 # Agradecimentos 
 
-    Toda equipe Dev em Dobro e https://pokeapi.co/ por disponibilizar a API.
+ Toda equipe Dev em Dobro e https://pokeapi.co/ por disponibilizar a API.
