@@ -17,22 +17,22 @@
     Essa Pasta services é onde é feita a busca da lista dos pokemons com parâmetro inicial de 0 e com outro parâmetro de 10 que foi a quantidade a ser buscada, e a busca por id de cada pokemon quando selecionado.
     Para fazer a busca da propriedade de imagem do pokemon tive que acessa-la como uma string dentro do objeto, porque o JS entenderia official-artwork como uma operação matemática e não como um nome de propriedade.
 
-    [<img src="./src/images/buscaImagemPokemon.PNG" alt="imagem do código buscando propriedade como string dentro de colchetes">]
+    <img src="./src/images/buscaImagemPokemon.PNG" alt="imagem do código buscando propriedade como string dentro de colchetes">
 
     Importado Link do react-router-dom, styled components, useContext(ThemeContext).
 
     No component de PokemonsDetals um método que foi muito útil foi o .find(), onde utilizei para me retorna apenas um elemento de satisfazia minha condição que era o "en", porque .find() ao invés de .filter(), porque nessa situação o find evitou mais código, deixando um código mais limpo, o filter iria me retorna um array com todas descrições em "en" mas o find me retorna o primeiro objeto que corresponde e para a busca imediatamente.
 
-    [<img src="./src/images/find.PNG" alt="Imagem com código .find">]
+    <img src="./src/images/find.PNG" alt="Imagem com código .find">
 
     O uso de um objeto DINÂMICO foi muito eficiente, usei a chave a.ability.name como uma chave dinâmica no objeto description, mas esse valor atribuido depende se descriptionEntry existe ou não. Com isso evitei código manual e repetitivo, adapta a qualquer numero de habilidade automaticamente e o código facilita a manutenção e escabilidade do código.
 
-    [<img src="./src/images/objetoDinamico.PNG" alt="Imagem trecho de codigo Dinamico">]
+    <img src="./src/images/objetoDinamico.PNG" alt="Imagem trecho de codigo Dinamico">
 
     No arquivo routes.jsx da pasta pages, deixei o header por fora do Routes porque eu quero que meu header fique presente em todos minhas páginas, dessa forma náo preciso importa em cada pagina meu header.
 
 
-    [<img src="./src/images/rotaHeader.PNG" alt="Trecho de codigo do heder atribuido em todas paginas de modo eficiente">]
+    <img src="./src/images/rotaHeader.PNG" alt="Trecho de codigo do heder atribuido em todas paginas de modo eficiente">
 
     Utilizei import { ThemeProvider as StyledThemeProvider } from "styled-components"; para deixar meu código mais limpo e mais facil de dar manutenção.
 
@@ -42,7 +42,7 @@
 
 # Gif funcionamento do Projeto
 
-    [<img src="./src/images/gif.gif" alt="gif funcionamento do projeto">]
+    <img src="./src/images/gif.gif" alt="gif funcionamento do projeto">
 
 # Autor 
 
