@@ -18,16 +18,16 @@
 
 # Decisões tomadas durante o planejamento
 
-    Para realização desse projeto não houve um layot e design para seguir de base, foi deixado para usar
-    a minha própria criatividade, optei por começar pelo home buscando a lista dos 10 pokemons, para isso 
-    criei uma pasta de services de onde seria buscado essa lista, para fazer essa busca decidi usar o 
-    Axios por ser fácil de uasr com código assincrono, ser um código limpo e legivel e porque aprendi 
-    sobre ele a pouco tempo assim me adapto mais rapido com ele.
-    Essa Pasta services é onde é feita a busca da lista dos pokemons com parâmetro inicial de 0 e com outro 
-    parâmetro de 10 que foi a quantidade a ser buscada, e a busca por id de cada pokemon quando selecionado.
-    Para fazer a busca da propriedade de imagem do pokemon tive que acessa-la como uma string dentro do 
-    objeto, porque o JS entenderia official-artwork como uma operação matemática e não como um nome de 
-    propriedade.
+Para realização desse projeto não houve um layot e design para seguir de base, foi deixado para usar
+a minha própria criatividade, optei por começar pelo home buscando a lista dos 10 pokemons, para isso 
+criei uma pasta de services de onde seria buscado essa lista, para fazer essa busca decidi usar o 
+Axios por ser fácil de uasr com código assincrono, ser um código limpo e legivel e porque aprendi 
+sobre ele a pouco tempo assim me adapto mais rapido com ele.
+Essa Pasta services é onde é feita a busca da lista dos pokemons com parâmetro inicial de 0 e com outro 
+parâmetro de 10 que foi a quantidade a ser buscada, e a busca por id de cada pokemon quando selecionado.
+Para fazer a busca da propriedade de imagem do pokemon tive que acessa-la como uma string dentro do 
+objeto, porque o JS entenderia official-artwork como uma operação matemática e não como um nome de 
+propriedade.
 
 [<img src="./src/images/buscaImagemPokemon.PNG" alt="Buscando propriedade como string dentro de colchetes">]
 
