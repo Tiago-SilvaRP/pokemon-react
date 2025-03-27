@@ -15,7 +15,7 @@
 
 # Ferramentas utilizadas
 
-    -Html | CSS | REACT | VITE |
+    -Html | CSS | JavaScript | REACT | VITE |
 
 # Decisões tomadas durante o planejamento
 
