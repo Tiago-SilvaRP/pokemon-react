@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import pokebaal from '../../images/pokebola.png'
+import pokebaal from '../../images/bola.png';
 import logoPokemon from '../../images/logoPokemon.png'
 import styled from "styled-components"
 import { ThemeTooglerButton } from "../theme-toogler-button/themeTooglerButton"
