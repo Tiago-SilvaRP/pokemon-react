@@ -1,9 +1,10 @@
 import { Button } from "../button/button";
-import { ThemeContext, themes } from "../../contexts/themeContext"
-import { useContext } from "react"
 import sun from "../../images/sun.png"
 import moon from "../../images/moon.png"
 import { styled } from "styled-components";
+import { useContext } from "react"
+import { ThemeContext } from "../../contexts/themeContext";
+import { themes } from "../../contexts/themes";
 
 export const ThemeTooglerButton = () => {
 

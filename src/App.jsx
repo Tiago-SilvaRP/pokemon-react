@@ -1,4 +1,4 @@
-import { ThemeProvider } from './contexts/themeContext'
+import { ThemeProvider } from './contexts/themeProvider'
 import { AppRoutes } from './pages/routes'
 
 function App() {
