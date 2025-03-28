@@ -31,6 +31,8 @@
     objeto, porque o JS entenderia official-artwork como uma operação matemática e não como um nome de 
     propriedade.
 
+    Tomei a decisão de separar os arquivos themeContext, themeProvider e themes para não ocorrer um reload completo da página ao invés de um hot reload rápido, e separando a responsabilidade em seu próprio arquivo eu mantenho o código mais organizado e evito problemas com Fast Refresh, melhorando a performace e manutenção.
+
 [<img src="./src/images/buscaImagemPokemon.PNG" alt="Buscando propriedade como string dentro de colchetes">]
 
     Importado Link do react-router-dom, styled components, useContext(ThemeContext).
