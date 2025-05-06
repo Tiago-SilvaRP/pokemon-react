@@ -1,9 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { dataPokemons } from "../../services/api-Pokemon";
-import { Button } from "../button/button";
-import { Link } from "react-router-dom";
 import { ThemeContext } from "../../contexts/themeContext";
-import { styled } from "styled-components"
+import { S } from "./pokemon-List.style";
 
 export const ListPokemons = () => {
     const [pokemons, setPokemons] = useState([]);
@@ -33,97 +31,29 @@ export const ListPokemons = () => {
         setLoading(false)
     }
 
-
     return (
-        <Main>
-            <Title>Clique em um pokemon para ver mais detalhes sobre ele!</Title>
-            <Cards>
+        <S.Main>
+            <S.Title>Clique em um pokemon para ver mais detalhes sobre ele!</S.Title>
+            <S.Cards>
                 {pokemons.length > 0 ? (pokemons.map((pokemon) => (
-                    <Card key={pokemon.id}>
-                        <StyledLink
+                    <S.Card key={pokemon.id}>
+                        <S.StyledLink
                             to={`/pokemon/${pokemon.id}`}>
                             <h3>{pokemon.name}</h3>
-                            <Img src={
+                            <S.Img src={
                                 pokemon.sprites?.other["official-artwork"]?.front_default ??
                                 pokemon.sprites?.other["official-artwork"]?.front_shiny
                             } alt={pokemon.name} />
-                        </StyledLink>
-                    </Card>))
+                        </S.StyledLink>
+                    </S.Card>))
                 ) : (<p>Carregando pokemons...</p>)
                 }
-            </Cards>
+            </S.Cards>
 
-            <StyledButton onClick={handleLoadPokemons}
+            <S.StyledButton onClick={handleLoadPokemons}
                 disabled={loading || pokemons.length === 0}>
                 {loading ? "Carregando..." : "Carregar mais Pokemons"}
-            </StyledButton>
-        </Main>
+            </S.StyledButton>
+        </S.Main>
     )
 }
-
-const boxShadow = `
-    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
-        rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
-`
-
-const Main = styled.main`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    color: ${(children) => children.theme.color};
-`
-
-const Title = styled.h1`
-    text-align: center;
-    padding: 10px;
-    margin: 40px 0;
-`
-
-const Cards = styled.ul`
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 40px;
-`
-
-const Card = styled.li`
-    text-align: center;
-    width: 300px;
-    padding: 15px;
-    border-radius: 15px;
-    transition: 0.3s ease-in-out;
-    background: ${(children) => children.theme.background};
-    ${boxShadow};
-
-    &:hover {
-        transform: scale(1.1);
-    }
-`
-
-const StyledLink = styled(Link)`
-    color: ${(children) => children.theme.color};
-`
-
-const Img = styled.img`
-    width: 100%;
-`
-
-const StyledButton = styled(Button)`
-    height: 50px;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 40px;
-    cursor: pointer;
-    font-size: 20px;
-    transition: 0.3s ease-in-out;
-    ${boxShadow};
-    color: ${(children) => children.theme.color};
-    background: ${(children) => children.theme.background};
-
-        &:hover {
-            transform: scale(1.1);
-        }
-`
